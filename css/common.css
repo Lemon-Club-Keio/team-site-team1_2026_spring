@@ -1,0 +1,92 @@
+/* ============================================================
+   common.css — 全ページ共通スタイル
+   ヘッダー・ナビゲーション・フッターを管理しています。
+
+   【重要】このファイルを変更する場合は
+   チーム全員に相談してから変更してください。
+   個人ページのスタイルは各ページの style.css に書いてください。
+   ============================================================ */
+
+
+/* ===== カラー変数 =====
+   サイト全体の色はここで一括管理しています。
+   チームで話し合って色を決めたら、ここの値を書き換えてください。
+   ============================================================ */
+:root {
+  --color-primary:     #F5C518; /* メインカラー（ロゴ・アクセント） */
+  --color-text:        #333333; /* 本文テキスト */
+  --color-bg:          #ffffff; /* ページ背景 */
+  --color-header-bg:   #1a1a1a; /* ヘッダー背景 */
+  --color-footer-bg:   #1a1a1a; /* フッター背景 */
+  --color-footer-text: #cccccc; /* フッターテキスト */
+}
+
+
+/* ===== 最小リセット ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+
+/* ============================================================
+   ここより下は触らないでください。
+   レイアウトが崩れる原因になります。
+   変更が必要な場合は必ずチームに相談してください。
+   ============================================================ */
+
+
+/* ===== ヘッダー ===== */
+.site-header {
+  background-color: var(--color-header-bg);
+  padding: 0 24px;
+}
+
+.site-nav {
+  max-width: 960px;
+  margin: 0 auto;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+
+
+/* ===== フッター ===== */
+.site-footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+}
