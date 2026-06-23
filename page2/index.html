@@ -1,38 +1,459 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- ページタイトルを変更してください（例：アクセス | カフェ名） -->
-  <title>ページ2 | サイト名</title>
+  <title>北海道 観光地紹介 | 北海道の美しき絶景</title>
+  <!-- Google Fonts for premium typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- 共通スタイル（ヘッダー・ナビ・フッター） -->
   <link rel="stylesheet" href="../css/common.css">
-  <!-- このページ専用スタイル（style.css に自由に書いてください） -->
+  <!-- このページ専用スタイル -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- ===== ヘッダー（common.css で管理） ===== -->
+  <!-- ===== ヘッダー（common.css で管理、style.css でオーバーライド） ===== -->
   <header class="site-header">
     <nav class="site-nav">
-      <a href="../index.html" class="nav-logo">サイト名</a>
+      <a href="../index.html" class="nav-logo">北海道観光ナビ</a>
       <ul class="nav-links">
         <li><a href="../index.html">トップ</a></li>
         <li><a href="../page1/index.html">ページ1</a></li>
-        <li><a href="index.html">ページ2</a></li>
+        <li><a href="index.html" class="nav-active">ページ2</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- ===== メインコンテンツ ===== -->
-  <main>
-    <!-- ここにコンテンツを追加してください -->
+  <main class="page-container">
+
+    <!-- ヒーローセクション -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-badge">HOKKAIDO TRAVEL GUIDE</span>
+        <h1 class="hero-title">神秘と感動の北の大地へ</h1>
+        <p class="hero-text">
+          どこまでも広がる壮大な大自然、歴史あるロマンチックな街並み、そして五感を満たす美しい四季。<br>
+          北海道ならではの息をのむような美しい絶景と、心がほどける特別な体験をご紹介します。
+        </p>
+        <div class="scroll-indicator">
+          <span class="scroll-text">SCROLL</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 観光地紹介・フィルターセクション -->
+    <section class="spots-section">
+      <div class="spots-header">
+        <h2 class="section-title">おすすめ観光地</h2>
+        <div class="filter-wrapper">
+          <div class="filter-group">
+            <span class="filter-label"><i class="fa-solid fa-sliders"></i> 絞り込み:</span>
+            <div class="filter-buttons">
+              <button class="filter-btn active" data-filter="all">すべて</button>
+              <button class="filter-btn" data-filter="nature">大自然・絶景</button>
+              <button class="filter-btn" data-filter="romantic">街並み・歴史</button>
+              <button class="filter-btn" data-filter="summer">春夏のおすすめ</button>
+              <button class="filter-btn" data-filter="winter">秋冬のおすすめ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spots-grid" id="spotsGrid">
+        <!-- 札幌 -->
+        <article class="spot-card fade-in" data-categories="romantic summer winter">
+          <div class="card-image-wrapper">
+            <img src="images/sapporo_spot.png" alt="札幌" class="card-image">
+            <div class="card-category-tags">
+              <span class="tag">都市</span>
+              <span class="tag">観光・文化</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">札幌 <span class="en-title">Sapporo</span></h3>
+            <p class="card-excerpt">
+              北海道の政治・経済・文化の中心地。美しい並木や花壇が広がる「大通公園」を中心に、名物テレビ塔や時計台などの歴史的シンボルが点在し、四季折々のイベントと都市の魅力が融合しています。</p>
+            <button class="detail-btn" onclick="openModal('sapporo')">詳細を見る <i
+                class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </article>
+
+        <!-- 洞爺湖 -->
+        <article class="spot-card fade-in" data-categories="nature summer winter">
+          <div class="card-image-wrapper">
+            <img src="images/lake_toya.png" alt="洞爺湖" class="card-image">
+            <div class="card-category-tags">
+              <span class="tag">大自然</span>
+              <span class="tag">温泉</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">洞爺湖 <span class="en-title">Lake Toya</span></h3>
+            <p class="card-excerpt">
+              美しく澄んだ巨大なカルデラ湖。湖畔を彩る四季折々の表情や、夜空を染めるロングラン花火大会、有珠山ロープウェイからの大パノラマなど、大自然と温泉の魅力を一度に堪能できます。</p>
+            <button class="detail-btn" onclick="openModal('toya')">詳細を見る <i
+                class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </article>
+
+        <!-- 釧路湿原 -->
+        <article class="spot-card fade-in" data-categories="nature summer">
+          <div class="card-image-wrapper">
+            <img src="images/kushiro_marsh.png" alt="釧路湿原" class="card-image">
+            <div class="card-category-tags">
+              <span class="tag">大自然</span>
+              <span class="tag">野生動物</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">釧路湿原 <span class="en-title">Kushiro Marsh</span></h3>
+            <p class="card-excerpt">日本最大級の広大な湿原。手つかずの壮大な大自然が広がり、特別天然記念物のタンチョウや希少な野生動植物が生息しています。細岡展望台からの夕日は言葉を失う美しさです。
+            </p>
+            <button class="detail-btn" onclick="openModal('kushiro')">詳細を見る <i
+                class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </article>
+
+        <!-- 富良野ラベンダー畑 -->
+        <article class="spot-card fade-in" data-categories="nature summer">
+          <div class="card-image-wrapper">
+            <img src="images/furano_lavender.png" alt="富良野ラベンダー畑" class="card-image">
+            <div class="card-category-tags">
+              <span class="tag">絶景</span>
+              <span class="tag">花畑</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">富良野ラベンダー畑 <span class="en-title">Furano Lavender Field</span></h3>
+            <p class="card-excerpt">
+              夏の北海道を象徴する、一面に広がる鮮やかな紫色のラベンダー畑。風にのって漂う優しい香りと、雄大な十勝岳連峰を背景にした色彩豊かなパッチワークの丘は、まるで絵画のような美しさです。</p>
+            <button class="detail-btn" onclick="openModal('furano')">詳細を見る <i
+                class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </article>
+
+        <!-- 小樽運河 -->
+        <article class="spot-card fade-in" data-categories="romantic winter">
+          <div class="card-image-wrapper">
+            <img src="images/otaru_canal.png" alt="小樽運河" class="card-image">
+            <div class="card-category-tags">
+              <span class="tag">レトロ</span>
+              <span class="tag">歴史的街並み</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">小樽運河 <span class="en-title">Otaru Canal</span></h3>
+            <p class="card-excerpt">大正ロマンの風情漂う、歴史的な石造り倉庫群とガス灯が連なる美しい運河。夕暮れ時にはガス灯が灯り、水面に揺らめく光がロマンチックでノスタルジックな雰囲気を演出します。
+            </p>
+            <button class="detail-btn" onclick="openModal('otaru')">詳細を見る <i
+                class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 料金プランセクション -->
+    <section class="plans-section fade-in">
+      <div class="plans-header">
+        <h2 class="section-title">おすすめ旅行プラン・料金</h2>
+        <p class="section-subtitle-text">旅の目的や日数に合わせて選べる、快適な北海道ツアーパッケージ</p>
+      </div>
+
+      <div class="plans-grid">
+        <!-- プラン1：道央コンパクトプラン（安くて早い） -->
+        <div class="plan-card featured-plan">
+          <div class="plan-badge">安くてスピーディー！</div>
+          <div class="plan-card-header">
+            <span class="plan-duration">1泊2日 / 道央エリア完結</span>
+            <h3 class="plan-name">道央王道コンパクトプラン</h3>
+            <p class="plan-route">札幌・小樽・洞爺湖</p>
+          </div>
+          <div class="plan-price-box">
+            <span class="price-currency">¥</span>
+            <span class="price-amount">99,800
+              0</span>
+            <span class="price-unit">〜 / 1名様</span>
+          </div>
+          <div class="plan-divider"></div>
+          <div class="plan-card-body">
+            <p class="plan-desc">新千歳空港発着で、札幌・小樽・洞爺湖の主要スポットを無駄なくスピーディーに巡るリーズナブルなプラン。移動時間を最小限に抑え、初めての北海道観光や週末旅行に最適です。</p>
+            <ul class="plan-highlights">
+              <li><i class="fa-solid fa-circle-check"></i> <strong>1日目：</strong>札幌（時計台・大通公園散策）→ 洞爺湖温泉（温泉と夜の花火）</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>2日目：</strong>小樽（運河散策・ガラス細工体験・ランチ）→ 新千歳空港</li>
+              <li><i class="fa-solid fa-circle-check"></i> JRまたは高速バス利用で、安く早く西側のみで完結！</li>
+            </ul>
+          </div>
+          <div class="plan-card-footer">
+            <button class="plan-btn">プラン詳細・予約 <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- プラン2：道東大自然満喫プラン -->
+        <div class="plan-card">
+          <div class="plan-card-header">
+            <span class="plan-duration">2泊3日 / 道東大自然満喫</span>
+            <h3 class="plan-name">道東ネイチャーツアープラン</h3>
+            <p class="plan-route">釧路湿原・阿寒湖・知床</p>
+          </div>
+          <div class="plan-price-box">
+            <span class="price-currency">¥</span>
+            <span class="price-amount">149,800</span>
+            <span class="price-unit">〜 / 1名様</span>
+          </div>
+          <div class="plan-divider"></div>
+          <div class="plan-card-body">
+            <p class="plan-desc">
+              日本最大の湿原である釧路湿原や、世界自然遺産・知床をめぐる大冒険プラン。圧倒的なスケールの大自然や野生動物の観察、本格的なカヌーツーリングを楽しみたいアクティブ派におすすめです。</p>
+            <ul class="plan-highlights">
+              <li><i class="fa-solid fa-circle-check"></i> <strong>1日目：</strong>釧路空港 → 釧路湿原（カヌーツーリング＆夕日観賞）</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>2日目：</strong>阿寒湖（アイヌ文化体験）→ 知床温泉（リゾートホテル泊）</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>3日目：</strong>知床五湖ガイドウォーク ＆ 知床クルーズ → 女満別空港</li>
+            </ul>
+          </div>
+          <div class="plan-card-footer">
+            <button class="plan-btn secondary-btn">プラン詳細・予約 <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- ===== フッター（common.css で管理） ===== -->
+
+  <!-- ===== 詳細モーダルウィンドウ ===== -->
+  <div class="modal-overlay" id="detailModal">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-grid">
+        <div class="modal-image-area">
+          <img id="modalImage" src="" alt="" class="modal-large-image">
+        </div>
+        <div class="modal-info-area">
+          <span class="modal-badge" id="modalBadge">CATEGORY</span>
+          <h2 class="modal-title" id="modalTitle">観光地名</h2>
+          <span class="modal-subtitle" id="modalSubtitle">English Name</span>
+
+          <div class="modal-specs">
+            <div class="spec-item">
+              <span class="spec-label"><i class="fa-solid fa-location-dot"></i> エリア:</span>
+              <span class="spec-val" id="modalArea">エリア情報</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label"><i class="fa-solid fa-calendar-days"></i> ベストシーズン:</span>
+              <span class="spec-val" id="modalSeason">シーズン情報</span>
+            </div>
+          </div>
+
+          <div class="modal-divider"></div>
+
+          <div class="modal-description">
+            <h4 class="description-heading">スポット紹介</h4>
+            <p id="modalDesc">ここに紹介文が入ります。</p>
+          </div>
+
+          <div class="modal-features">
+            <h4 class="description-heading">見どころ・アクティビティ</h4>
+            <ul id="modalFeaturesList">
+              <!-- JSで動的に挿入 -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== フッター（common.css で管理、style.css でオーバーライド） ===== -->
   <footer class="site-footer">
-    <p>&copy; 2026 チーム名</p>
+    <p>&copy; 2026 北海道観光ガイドチーム</p>
   </footer>
 
+  <!-- ===== インタラクティブJavaScript ===== -->
+  <script>
+    // 観光地の詳細データオブジェクト
+    const spotDetails = {
+      sapporo: {
+        title: "札幌",
+        subtitle: "Sapporo",
+        badge: "都市 / 観光・文化",
+        image: "images/sapporo_spot.png",
+        area: "道央（石狩振興局 札幌市）",
+        season: "通年（初夏の「YOSAKOIソーラン祭り」や冬の「さっぽろ雪まつり」などイベントが盛ん）",
+        desc: "札幌は、大自然と洗練された現代都市が美しく調和する北海道の道庁所在地です。市の中心部に位置する「大通公園」は、東西に約1.5kmにわたる巨大なオアシスで、夏には噴水やライラック、秋にはオータムフェスト、冬には世界的に有名な「さっぽろ雪まつり」の舞台となります。赤れんがの愛称で親しまれる旧北海道庁本庁舎や札幌市時計台など、開拓使時代のロマンを伝える歴史的建造物も点在し、味噌ラーメンやスープカレー、ジンギスカンなどの北国を代表する絶品グルメの宝庫でもあります。",
+        features: [
+          "大通公園とさっぽろテレビ塔：四季を通じて美しい花やイベントが催され、テレビ塔からは市街を360度見渡せます。",
+          "さっぽろ雪まつり：毎年2月上旬に開催される、精巧な大雪氷像が並ぶ世界三大雪まつりの一つ。",
+          "札幌市時計台：明治11年に旧札幌農学校の演武場として建設された、日本最古の塔時計を持つシンボル。"
+        ]
+      },
+      toya: {
+        title: "洞爺湖",
+        subtitle: "Lake Toya",
+        badge: "大自然 / 温泉",
+        image: "images/lake_toya.png",
+        area: "道央（有珠郡洞爺湖町・虻田郡洞爺湖町）",
+        season: "春〜秋（特に4月下旬〜10月下旬のロングラン花火大会期間がおすすめ）",
+        desc: "洞爺湖は、数万年前の巨大な噴火によって形成されたほぼ円形のカルデラ湖です。日本で3番目に大きく、冬でも凍らない「不凍湖」としても知られています。湖の中央に浮かぶ「中島」は野生のエゾシカが生息する豊かな森となっており、遊覧船で渡ることができます。周辺には昭和新山や有珠山といった活火山があり、大地のダイナミックなエネルギーを体感できる世界ジオパークに認定されています。名湯として知られる洞爺湖温泉も有名で、湖を望む露天風呂でのリフレッシュは至福のひとときです。",
+        features: [
+          "洞爺湖ロングラン花火大会：4月末〜10月末まで、毎晩開催される圧巻の花火。",
+          "有珠山ロープウェイ：昭和新山を間近に眺めながら山頂へ。洞爺湖と噴火湾を一望する絶景。",
+          "中島巡り遊覧船：クラシックな船に乗って、湖上クルージングと中島散策を満喫。"
+        ]
+      },
+      kushiro: {
+        title: "釧路湿原",
+        subtitle: "Kushiro Marsh",
+        badge: "大自然 / 野生動物",
+        image: "images/kushiro_marsh.png",
+        area: "道東（釧路市、釧路郡釧路町、川上郡標茶町・弟子屈町、阿寒郡鶴居村）",
+        season: "夏（湿原が青々と茂る季節）または冬（雪原に佇むタンチョウの優美な姿が観察可能）",
+        desc: "日本最大級の湿原である釧路湿原は、約2万8000ヘクタールにも及ぶ広大な土地に手つかずの原始の自然がそのまま残されています。ラムサール条約に登録されており、国の特別天然記念物であるタンチョウ（レッドクラン）をはじめ、多くの水鳥や希少な野生動植物の貴重な生息地となっています。何万年もの歳月をかけて形成されたこの湿地帯は、太古の地球を思わせる静寂と圧倒的なスケール感で訪れる人々を魅了します。夕暮れ時に展望台から見渡す、黄金色に染まり蛇行する釧路川のシルエットは絶景です。",
+        features: [
+          "釧路川カヌーツーリング：カヌーに乗って目線と同じ高さで湿原の静寂を感じる体験。",
+          "細岡展望台：湿原を一望し、阿寒の山々と美しく蛇行する釧路川、そして息をのむ夕日を鑑賞。",
+          "くしろ湿原ノロッコ号：初夏から秋にかけて、のんびりと湿原を走る人気の展望列車。"
+        ]
+      },
+      furano: {
+        title: "富良野ラベンダー畑",
+        subtitle: "Furano Lavender Field",
+        badge: "絶景 / 花畑",
+        image: "images/furano_lavender.png",
+        area: "道央（富良野市、中富良野町など）",
+        season: "7月中旬〜7月下旬（ラベンダー満開のピークシーズン）",
+        desc: "夏の北海道の代名詞とも言える富良野のラベンダー畑は、十勝岳連峰の雄大な稜線を背景に、なだらかな丘陵地帯一面が鮮やかな紫色の絨毯で覆い尽くされます。もともとは香料の原料として栽培が始まり、現在では世界中から観光客が訪れる絶景スポットとなりました。心地よい風に乗って漂う豊かなハーブの香りが心地よく心身を癒します。ラベンダーだけでなく、ポピーやカスミソウなど多種多様な花々がパッチワークのように咲き誇る美瑛・富良野エリアは、絵画のような色彩美を誇ります。",
+        features: [
+          "ファーム富田：日本で最も歴史あるラベンダー畑。様々なテーマの花畑が広がります。",
+          "ラベンダーソフトクリーム：ほのかに香る爽やかで人気の高いファーム定番グルメ。",
+          "美瑛パッチワークの路：車や自転車で巡る、美しい農地が広がる波打つ丘の絶景ロード。"
+        ]
+      },
+      otaru: {
+        title: "小樽運河",
+        subtitle: "Otaru Canal",
+        badge: "レトロ / 歴史的街並み",
+        image: "images/otaru_canal.png",
+        area: "道央（小樽市）",
+        season: "冬（『小樽雪あかりの路』が開催される2月頃はキャンドルが灯り、最もロマンチックです）",
+        desc: "小樽運河は、大正12年（1923年）に完成した日本屈指の歴史的遺産です。海を埋め立てて緩やかに湾曲した形で造られたのが特徴で、かつて北海道の開拓を支える物流の港として大いに栄えました。運河沿いには当時の姿を残す重厚な石造りの倉庫群が建ち並び、現在はレストランやガラス工房、オルゴール専門店等として再利用されています。夕暮れ時になると、運河沿いに設置された63基のガス灯がともり、ノスタルジックで温かみのある光が静かな水面を美しく反射させ、異国情緒あふれる大正ロマンの世界へと誘います。",
+        features: [
+          "小樽運河クルーズ：船上から倉庫群や歴史的建造物をガイド付きで楽しむ約40分間の運河の旅。",
+          "小樽雪あかりの路：冬の夜、運河の水面にガラスの浮き玉キャンドルが揺らめく幻想的なイベント。",
+          "堺町通り散策：近くの歴史的なメインストリートで、ガラス細工やスイーツの食べ歩き。"
+        ]
+      }
+    };
+
+    // フィルター機能の実装
+    document.addEventListener("DOMContentLoaded", () => {
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const cards = document.querySelectorAll(".spot-card");
+
+      filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          // アクティブクラスの切り替え
+          filterButtons.forEach(btn => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          const filterValue = button.getAttribute("data-filter");
+
+          cards.forEach(card => {
+            const categories = card.getAttribute("data-categories").split(" ");
+
+            if (filterValue === "all" || categories.includes(filterValue)) {
+              // フェードインアニメーションをリセットして表示
+              card.style.display = "block";
+              setTimeout(() => {
+                card.style.opacity = "1";
+                card.style.transform = "translateY(0)";
+              }, 50);
+            } else {
+              // 非表示
+              card.style.opacity = "0";
+              card.style.transform = "translateY(20px)";
+              setTimeout(() => {
+                card.style.display = "none";
+              }, 300);
+            }
+          });
+        });
+      });
+    });
+
+    // モーダル制御
+    const modal = document.getElementById("detailModal");
+    const modalImage = document.getElementById("modalImage");
+    const modalBadge = document.getElementById("modalBadge");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalSubtitle = document.getElementById("modalSubtitle");
+    const modalArea = document.getElementById("modalArea");
+    const modalSeason = document.getElementById("modalSeason");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalFeaturesList = document.getElementById("modalFeaturesList");
+
+    function openModal(spotKey) {
+      const data = spotDetails[spotKey];
+      if (!data) return;
+
+      // データの埋め込み
+      modalImage.src = data.image;
+      modalImage.alt = data.title;
+      modalBadge.textContent = data.badge;
+      modalTitle.textContent = data.title;
+      modalSubtitle.textContent = data.subtitle;
+      modalArea.textContent = data.area;
+      modalSeason.textContent = data.season;
+      modalDesc.textContent = data.desc;
+
+      // 見どころリストの作成
+      modalFeaturesList.innerHTML = "";
+      data.features.forEach(feat => {
+        const li = document.createElement("li");
+
+        // 最初のコロンまでを太字にするなどのプチ装飾
+        const parts = feat.split("：");
+        if (parts.length > 1) {
+          li.innerHTML = `<strong>${parts[0]}：</strong>${parts[1]}`;
+        } else {
+          li.textContent = feat;
+        }
+        modalFeaturesList.appendChild(li);
+      });
+
+      // 表示とアニメーション
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden"; // 背景スクロール禁止
+    }
+
+    function closeModal() {
+      modal.classList.remove("active");
+      document.body.style.overflow = ""; // 背景スクロール再開
+    }
+
+    // モーダル背景クリックでも閉じるようにする
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // ESCキーでモーダルを閉じる
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    });
+  </script>
 </body>
+
 </html>
