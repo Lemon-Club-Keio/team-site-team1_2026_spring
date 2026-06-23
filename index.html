@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- サイト名を変更してください -->
-  <title>サイト名</title>
+  <meta name="description" content="沖縄の美しい自然、歴史的な世界遺産、定番観光名所（美ら海水族館、首里城、古宇利大橋など）をご紹介する旅行ガイド。">
+  <title>沖縄旅ナビ | 美しき碧 of 楽園、沖縄へ</title>
   <!-- 共通スタイル（ヘッダー・ナビ・フッター） -->
   <link rel="stylesheet" href="css/common.css">
+  <!-- このページ専用スタイル -->
+  <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
 
   <!-- ===== ヘッダー（common.css で管理） ===== -->
-  <!-- サイト名・リンク先を変えたいときは css/common.css ではなくここのテキストを編集してください -->
   <header class="site-header">
     <nav class="site-nav">
-      <a href="index.html" class="nav-logo">サイト名</a>
+      <a href="index.html" class="nav-logo">沖縄旅ナビ</a>
       <ul class="nav-links">
         <li><a href="index.html">トップ</a></li>
         <li><a href="page1/index.html">ページ1</a></li>
@@ -24,15 +27,303 @@
   </header>
 
   <!-- ===== メインコンテンツ ===== -->
-  <main>
-    <!-- ここにコンテンツを追加してください -->
+  <main class="top-main">
+    <!-- ヒーローセクション -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <span class="hero-subtitle">BEAUTIFUL ISLAND OKINAWA</span>
+        <h1 class="hero-title">美しき碧の楽園、沖縄へ</h1>
+        <p class="hero-desc">どこまでも続く青い海と白い砂浜、息をのむような絶景と豊かな文化があなたを待っています。</p>
+        <a href="#spots" class="btn-primary">名所を巡る旅へ</a>
+      </div>
+    </section>
+
+    <!-- イントロセクション -->
+    <section class="intro-section" id="intro">
+      <div class="container">
+        <div class="intro-card">
+          <h2>沖縄の魅力</h2>
+          <p>
+            日本最南端の県であり、かつて琉球王国として栄えた独自の歴史と文化を持つ沖縄。年間を通して温暖な気候に恵まれ、世界屈指の透明度を誇る美しい海に囲まれています。豊かな自然、歴史的な世界遺産、そして温かい人々と美味しい料理が織りなす、極上のリゾート体験をお届けします。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- スポット紹介セクション -->
+    <section class="spots-section" id="spots">
+      <div class="container">
+        <h2 class="section-title">おすすめの名所紹介</h2>
+        <p class="section-subtitle">沖縄を訪れたら絶対に外せない、人気の代表的観光スポット</p>
+
+        <div class="spots-grid">
+          <!-- スポット1: 美ら海水族館 -->
+          <article class="spot-card">
+            <div class="spot-img-wrapper">
+              <img src="images/churaumi_aquarium.png" alt="沖縄美ら海水族館">
+              <span class="spot-tag">水族館・自然</span>
+            </div>
+            <div class="spot-info">
+              <h3>沖縄美ら海水族館</h3>
+              <p class="spot-desc">
+                「沖縄の海との出会い」をテーマに、神秘的な海の世界を再現した世界最大級の水族館。巨大水槽「黒潮の海」を泳ぐ全長8.7mものジンベエザメやナンヨウマンタの群れは圧倒的なスケール感です。</p>
+              <div class="spot-action">
+                <a href="https://www.instagram.com/kaiyohaku_churaumiaquarium/" target="_blank"
+                  rel="noopener noreferrer" class="instagram-link">
+                  <svg class="instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                  </svg>
+                  <span>公式 Instagram</span>
+                </a>
+              </div>
+              <div class="spot-footer">
+                <span class="spot-loc"><i class="loc-icon">📍</i> 本部町（もとぶちょう）</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- スポット2: 首里城公園 -->
+          <article class="spot-card">
+            <div class="spot-img-wrapper">
+              <img src="images/shurijo_castle.png" alt="首里城公園">
+              <span class="spot-tag">歴史・世界遺産</span>
+            </div>
+            <div class="spot-info">
+              <h3>首里城公園</h3>
+              <p class="spot-desc">
+                かつて琉球王国の政治、外交、文化の中心地として栄えた栄華の象徴。朱色に美しく彩られた独特の建築様式は、中国と日本の築城文化が融合した独自の歴史的価値を持ち、世界遺産にも登録されています。</p>
+              <div class="spot-action">
+                <a href="https://www.instagram.com/shurijo_park/" target="_blank" rel="noopener noreferrer"
+                  class="instagram-link">
+                  <svg class="instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                  </svg>
+                  <span>公式 Instagram</span>
+                </a>
+              </div>
+              <div class="spot-footer">
+                <span class="spot-loc"><i class="loc-icon">📍</i> 那覇市（なはし）</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- スポット3: 古宇利大橋 -->
+          <article class="spot-card">
+            <div class="spot-img-wrapper">
+              <img src="images/kouri_bridge.png" alt="古宇利大橋">
+              <span class="spot-tag">絶景・ドライブ</span>
+            </div>
+            <div class="spot-info">
+              <h3>古宇利大橋</h3>
+              <p class="spot-desc">
+                本島北部と古宇利島を結ぶ、全長1,960メートルの大人気ドライブコース。橋の両側に広がるエメラルドグリーンの絶景は、まるで海の上を走り抜けているかのような爽快感を味わうことができます。</p>
+              <div class="spot-action">
+                <a href="https://www.instagram.com/explore/tags/%E5%8F%A4%E5%AE%87%E5%88%A9%E5%A4%A7%E6%A5%8B/"
+                  target="_blank" rel="noopener noreferrer" class="instagram-link">
+                  <svg class="instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                  </svg>
+                  <span>#古宇利大橋 投稿一覧</span>
+                </a>
+              </div>
+              <div class="spot-footer">
+                <span class="spot-loc"><i class="loc-icon">📍</i> 今帰仁村（なきじんそん）</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- スポット4: 万座毛 -->
+          <article class="spot-card">
+            <div class="spot-img-wrapper">
+              <img src="images/manzamo_cliff.png" alt="万座毛">
+              <span class="spot-tag">絶景・自然</span>
+            </div>
+            <div class="spot-info">
+              <h3>万座毛</h3>
+              <p class="spot-desc">象の鼻のような形をした奇岩がそびえ立つ、沖縄きっての景勝地。隆起サンゴ礁の絶壁の上には広い芝生が広がり、東シナ海に沈む夕日の美しさは言葉を失うほどの感動です。</p>
+              <div class="spot-action">
+                <a href="https://www.instagram.com/explore/tags/%E4%B8%87%E5%BA%A7%E6%AF%9B/" target="_blank"
+                  rel="noopener noreferrer" class="instagram-link">
+                  <svg class="instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                  </svg>
+                  <span>#万座毛 投稿一覧</span>
+                </a>
+              </div>
+              <div class="spot-footer">
+                <span class="spot-loc"><i class="loc-icon">📍</i> 恩納村（おんなそん）</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- スポット5: 国際通り -->
+          <article class="spot-card">
+            <div class="spot-img-wrapper">
+              <img src="images/kokusai_dori.png" alt="那覇国際通り商店街">
+              <span class="spot-tag">ショッピング・グルメ</span>
+            </div>
+            <div class="spot-info">
+              <h3>那覇国際通り商店街</h3>
+              <p class="spot-desc">那覇市の中心部に位置し、「奇跡の1マイル」と呼ばれる沖縄最大のメインストリート。お土産店やレストラン、カフェが約1.6kmにわたって並び、常に活気と笑顔が溢れる場所です。
+              </p>
+              <div class="spot-action">
+                <a href="https://www.instagram.com/explore/tags/%E5%9B%BD%E9%9A%9B%E9%80%9A%E3%82%8A/" target="_blank"
+                  rel="noopener noreferrer" class="instagram-link">
+                  <svg class="instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                  </svg>
+                  <span>#国際通り 投稿一覧</span>
+                </a>
+              </div>
+              <div class="spot-footer">
+                <span class="spot-loc"><i class="loc-icon">📍</i> 那覇市（なはし）</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- スポット6: 与那覇前浜ビーチ -->
+          <article class="spot-card">
+            <div class="spot-img-wrapper">
+              <img src="images/okinawa_beach_hero.png" alt="与那覇前浜ビーチ">
+              <span class="spot-tag">ビーチ・絶景</span>
+            </div>
+            <div class="spot-info">
+              <h3>与那覇前浜ビーチ</h3>
+              <p class="spot-desc">
+                「東洋一の美しさ」と称される、宮古島を代表する白砂のロングビーチ。きめ細かな白い砂浜が約7kmにわたって続き、言葉を呑むようなコバルトブルーのグラデーションの海が広がっています。</p>
+              <div class="spot-action">
+                <a href="https://www.instagram.com/explore/tags/%E4%B8%8E%E9%82%A3%E8%A6%87%E5%89%8D%E6%B5%9C%E3%83%93%E3%83%BC%E3%83%81/"
+                  target="_blank" rel="noopener noreferrer" class="instagram-link">
+                  <svg class="instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                  </svg>
+                  <span>#与那覇前浜ビーチ 投稿一覧</span>
+                </a>
+              </div>
+              <div class="spot-footer">
+                <span class="spot-loc"><i class="loc-icon">📍</i> 宮古島市（みやこじまし）</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 旅行プラン（パッケージツアー）セクション -->
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <h2 class="section-title">おすすめ旅行プラン</h2>
+        <p class="section-subtitle">あなたの旅のスタイルに合わせた最適なツアーパッケージをお選びください</p>
+
+        <div class="pricing-grid">
+          <!-- フリープラン -->
+          <article class="pricing-card">
+            <h3 class="pricing-name">シンプル・フリープラン</h3>
+            <div class="pricing-price">
+              <span class="price-currency">¥</span>
+              <span class="price-num">29,80000</span>
+              <span class="price-period">〜 / 1名様（3泊4日）</span>
+            </div>
+            <ul class="pricing-features">
+              <li><span class="feature-check">✓</span> 往復航空券（LCC / 発着地選択可）</li>
+              <li><span class="feature-check">✓</span> カジュアルリゾートホテル宿泊</li>
+              <li><span class="feature-check">✓</span> レンタカー基本クラス（免責別）</li>
+              <li><span class="feature-check">✓</span> 完全自由行動アレンジ可能</li>
+            </ul>
+            <a href="#" class="btn-pricing btn-pricing-secondary">詳細・空き状況を見る</a>
+          </article>
+
+          <!-- アクティブ＆体験プラン -->
+          <article class="pricing-card featured">
+            <span class="pricing-badge">人気 No.1 / おすすめ</span>
+            <h3 class="pricing-name">アクティブ＆アドベンチャー</h3>
+            <div class="pricing-price">
+              <span class="price-currency">¥</span>
+              <span class="price-num">49,8000</span>
+              <span class="price-period">〜 / 1名様（3泊4日）</span>
+            </div>
+            <ul class="pricing-features">
+              <li><span class="feature-check">✓</span> 往復航空券（JAL / ANA指定）</li>
+              <li><span class="feature-check">✓</span> オーシャンビュー人気ホテル宿泊</li>
+              <li><span class="feature-check">✓</span> レンタカー（免責補償コミコミ）</li>
+              <li><span class="feature-check">✓</span> 美ら海水族館チケット＆シュノーケル付</li>
+            </ul>
+            <a href="#" class="btn-pricing btn-pricing-primary">詳細・プラン予約へ</a>
+          </article>
+
+          <!-- ラグジュアリープラン -->
+          <article class="pricing-card">
+            <h3 class="pricing-name">極上ラグジュアリーリゾート</h3>
+            <div class="pricing-price">
+              <span class="price-currency">¥</span>
+              <span class="price-num">128,0000</span>
+              <span class="price-period">〜 / 1名様（3泊4日）</span>
+            </div>
+            <ul class="pricing-features">
+              <li><span class="feature-check">✓</span> 往復航空券（プレミアム・ファースト）</li>
+              <li><span class="feature-check">✓</span> 5つ星最高級ホテル（ヴィラ確約）</li>
+              <li><span class="feature-check">✓</span> 外車・オープンカーレンタル付</li>
+              <li><span class="feature-check">✓</span> 貸切ヨットクルージング＆特別ディナー</li>
+            </ul>
+            <a href="#" class="btn-pricing btn-pricing-secondary">詳細・お見積もりへ</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 基本情報セクション -->
+    <section class="info-section" id="info">
+      <div class="container">
+        <div class="info-grid">
+          <div class="info-content">
+            <h2 class="section-title text-left">沖縄旅の基本情報</h2>
+            <p class="info-intro-text">旅行をより快適で楽しくするための役立つヒントをご紹介します。</p>
+            <ul class="info-list">
+              <li>
+                <div class="info-icon">☀️</div>
+                <div class="info-text">
+                  <h4>ベストシーズン</h4>
+                  <p>海水浴やマリンスポーツを楽しむなら、梅雨明けの6月下旬から10月がベスト。観光メインなら暑さが和らぎ過ごしやすい3〜4月や11〜12月がおすすめです。</p>
+                </div>
+              </li>
+              <li>
+                <div class="info-icon">🚗</div>
+                <div class="info-text">
+                  <h4>移動手段</h4>
+                  <p>沖縄本島は南北に長いため、自由度の高いレンタカーでの移動が最も便利です。那覇市内はモノレール（ゆいレール）や路線バスも充実しています。</p>
+                </div>
+              </li>
+              <li>
+                <div class="info-icon">🍜</div>
+                <div class="info-text">
+                  <h4>沖縄グルメ</h4>
+                  <p>もちもちした太麺の「沖縄そば」、ビタミン豊富な「ゴーヤーチャンプルー」、とろけるような三枚肉の「ラフテー」など、独特の郷土料理は必食です。</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="info-card-highlight">
+            <h3>めんそーれ沖縄へ</h3>
+            <p>「めんそーれ」は沖縄の方言で「ようこそ」という意味です。豊かな自然とあたたかな島風、そして「いちゃりばちょーでー（一度会えばみな兄弟）」の精神で、あなたを温かくお迎えします。</p>
+            <div class="wave-decoration"></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ===== フッター（common.css で管理） ===== -->
-  <!-- チーム名・年を変更してください -->
   <footer class="site-footer">
-    <p>&copy; 2026 チーム名</p>
+    <p>&copy; 2026 沖縄旅ナビ 制作チーム</p>
   </footer>
 
 </body>
+
 </html>
