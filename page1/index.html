@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- ページタイトルを変更してください（例：メニュー | カフェ名） -->
-  <title>ページ1 | サイト名</title>
+  <title>DISCOVER TAIWAN | ページ1</title>
   <!-- 共通スタイル（ヘッダー・ナビ・フッター） -->
   <link rel="stylesheet" href="../css/common.css">
+  <!-- Google Fonts (Noto Sans JP, Playfair Display) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- このページ専用スタイル（style.css に自由に書いてください） -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -25,14 +30,508 @@
   </header>
 
   <!-- ===== メインコンテンツ ===== -->
-  <main>
-    <!-- ここにコンテンツを追加してください -->
+  <main class="taiwan-page">
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-bg" style="background-image: linear-gradient(rgba(44, 38, 35, 0.4), rgba(44, 38, 35, 0.85)), url('taiwan_hero.png');"></div>
+      <div class="hero-container">
+        <span class="hero-tag">A Journey of Senses</span>
+        <h1 class="hero-title">DISCOVER<br><span class="highlight-text">TAIWAN</span></h1>
+        <p class="hero-subtitle">歴史を刻むレトロな路地、神秘的な大自然、心を満たす豊かな味わい。<br>旅情あふれる極上のひとときを、モダンかつクラシックな台湾で過ごしませんか。</p>
+        <div class="hero-actions">
+          <a href="#regions" class="btn btn-primary">エリアを探索する <i class="fa-solid fa-chevron-down"></i></a>
+          <a href="#consultation" class="btn btn-secondary">旅のご相談</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concept Section -->
+    <section class="concept-section">
+      <div class="container grid-2">
+        <div class="concept-content">
+          <span class="sub-title">Why Taiwan?</span>
+          <h2 class="section-title">伝統とモダンが美しく交差する島</h2>
+          <p class="concept-text">
+            日本からわずか数時間。美しい山々と海に囲まれた台湾には、千年の歴史が息づく静かな寺院、提灯の光が優しく揺れるレトロな街並み、活気に満ちた夜市、そしてダイナミックな自然が共存しています。
+          </p>
+          <p class="concept-text">
+            何よりも人々が親切で温かく、初めて訪れてもどこか懐かしく、安心感に満ちた心地よい滞在をお約束します。
+          </p>
+          <div class="concept-features">
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fa-solid fa-utensils"></i></div>
+              <div>
+                <h3>五感で愉しむ美食文化</h3>
+                <p>三代続く老舗のローカルグルメから、世界を魅了する本格茶藝館まで。</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><i class="fa-solid fa-torii-gate"></i></div>
+              <div>
+                <h3>ノスタルジーに浸る</h3>
+                <p>赤提灯の灯る九份の情緒や、古い建物を美しく再生したリノベスポットが充実。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="concept-visual">
+          <div class="quote-card">
+            <span class="quote-icon"><i class="fa-solid fa-quote-left"></i></span>
+            <p class="quote-quote">台湾の魅力は、美しい風景だけでなく、そこに暮らす人々の優しさに隠されている。</p>
+            <cite class="quote-author">— Travel Writer</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Regions Section -->
+    <section id="regions" class="regions-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="sub-title">Explore Regions</span>
+          <h2 class="section-title text-center">観光エリア紹介</h2>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="region-tabs">
+          <button class="tab-btn active" data-filter="all">すべてのエリア</button>
+          <button class="tab-btn" data-filter="taipei">台北 (Taipei)</button>
+          <button class="tab-btn" data-filter="jiufen">九份 (Jiufen)</button>
+          <button class="tab-btn" data-filter="tainan">台南 (Tainan)</button>
+          <button class="tab-btn" data-filter="nature">自然・絶景 (Nature)</button>
+        </div>
+
+        <!-- Region Cards Grid -->
+        <div class="regions-grid">
+          <!-- Taipei -->
+          <div class="region-card show" data-category="taipei">
+            <div class="card-inner">
+              <div class="card-icon"><i class="fa-solid fa-city"></i></div>
+              <h3 class="card-title">台北 / Taipei</h3>
+              <p class="card-desc">モダンな超高層ビル「台北101」と、数々の有名夜市が広がる台湾の心臓部。ショッピング、グルメ、マッサージなど、都市型の観光をフルに楽しめる中心地です。</p>
+              <ul class="card-highlights">
+                <li><i class="fa-solid fa-circle-chevron-right"></i> 台北101の圧倒的なパノラマ</li>
+                <li><i class="fa-solid fa-circle-chevron-right"></i> 士林夜市でB級グルメ三昧</li>
+                <li><i class="fa-solid fa-circle-chevron-right"></i> 国立故宮博物院の至宝の数々</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Jiufen -->
+          <div class="region-card show" data-category="jiufen">
+            <div class="card-inner">
+              <div class="card-icon"><i class="fa-solid fa-lightbulb"></i></div>
+              <h3 class="card-title">九份 / Jiufen</h3>
+              <p class="card-desc">かつて金鉱として栄え、現在はレトロな茶芸館や赤提灯が灯る石畳の坂道で世界中から人気の山街。夕暮れ時のノスタルジックな美しさは一生の思い出になります。</p>
+              <ul class="card-highlights">
+                <li><i class="fa-solid fa-circle-chevron-right"></i> 阿妹茶酒館で静かなお茶時間</li>
+                <li><i class="fa-solid fa-circle-chevron-right"></i> 幻想的な赤提灯のライトアップ</li>
+                <li><i class="fa-solid fa-circle-chevron-right"></i> 海を望む美しいテラスビュー</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Tainan -->
+          <div class="region-card show" data-category="tainan">
+            <div class="card-inner">
+              <div class="card-icon"><i class="fa-solid fa-archway"></i></div>
+              <h3 class="card-title">台南 / Tainan</h3>
+              <p class="card-desc">台湾で最も歴史が古く、独自の食文化や歴史的建造物が並ぶ「台湾の京都」と呼ばれる古都。情緒あふれる小路やローカル絶品小吃（シャオチー）を巡るのんびり旅が人気です。</p>
+              <ul class="card-highlights">
+                <li><i class="fa-solid fa-circle-chevron-right"></i> 赤嵌楼などの歴史遺産巡り</li>
+                <li><i class="fa-solid fa-circle-chevron-right"></i> 神農街で古民家リノベカフェ</li>
+                <li><i class="fa-solid fa-circle-chevron-right"></i> 担仔麺など、台南発祥グルメ</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Nature -->
+          <div class="region-card show" data-category="nature">
+            <div class="card-inner">
+              <div class="card-icon"><i class="fa-solid fa-mountain"></i></div>
+              <h3 class="card-title">花蓮・太魯閣 / Taroko</h3>
+              <p class="card-desc">大理石の巨大な絶壁がそそり立つ、ダイナミックで驚異的な大峡谷「太魯閣（タロコ）」。台湾の大自然の圧倒的なスケールとスピリチュアルなパワーを体感できる屈指の景勝地です。</p>
+              <ul class="card-highlights">
+                <li><i class="fa-solid fa-circle-chevron-right"></i> 燕子口から望む大理石の峡谷</li>
+                <li><i class="fa-solid fa-circle-chevron-right"></i> 美しい水が流れる砂卡礑遊歩道</li>
+                <li><i class="fa-solid fa-circle-chevron-right"></i> 太平洋を一望する清水断崖</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Gourmet Section -->
+    <section class="gourmet-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="sub-title">Taste of Taiwan</span>
+          <h2 class="section-title text-center">台湾グルメ紀行</h2>
+          <p class="gourmet-intro-text">独自の歴史と多様な食文化が育んだ台湾の味。<br>一皿ひとさらに、職人の技と物語が宿っています。</p>
+        </div>
+
+        <!-- Featured Dish -->
+        <div class="gourmet-featured">
+          <div class="gourmet-featured-label">Editor's Pick</div>
+          <div class="gourmet-featured-inner">
+            <div class="gourmet-featured-text">
+              <span class="gourmet-featured-num">No.1</span>
+              <h3 class="gourmet-featured-name">小籠包<span class="gourmet-featured-en">Xiaolongbao</span></h3>
+              <p class="gourmet-featured-desc">
+                薄さわずか数ミリの極薄皮に包まれた、旨味が凝縮された熱々の肉汁スープ。皮を噛んだ瞬間にじわっと広がる黄金スープが、小籠包の真髄です。鼎泰豊では職人が一個につき18回ひだを折るという芸術的な技が光ります。針生姜と鎮江黒酢を組み合わせた薬味との相性も完璧。
+              </p>
+              <div class="gourmet-featured-meta">
+                <div class="gourmet-meta-item">
+                  <span class="meta-label">価格目安</span>
+                  <span class="meta-value">NT$380〜650</span>
+                </div>
+                <div class="gourmet-meta-item">
+                  <span class="meta-label">おすすめの店</span>
+                  <span class="meta-value">鼎泰豊 / 點水樓</span>
+                </div>
+                <div class="gourmet-meta-item">
+                  <span class="meta-label">食べ方のコツ</span>
+                  <span class="meta-value">レンゲに乗せ一口で</span>
+                </div>
+              </div>
+            </div>
+            <div class="gourmet-featured-visual">
+              <div class="gourmet-featured-bg">蒸籠</div>
+              <div class="gourmet-chip-group">
+                <span class="gourmet-chip"><i class="fa-solid fa-fire"></i> 熱々スープ</span>
+                <span class="gourmet-chip"><i class="fa-solid fa-star"></i> 芸術的な18折</span>
+                <span class="gourmet-chip"><i class="fa-solid fa-pepper-hot"></i> 生姜＆黒酢</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gourmet-grid">
+          <!-- Gourmet 1: 小籠包 -->
+          <div class="gourmet-card">
+            <div class="gourmet-header">
+              <span class="gourmet-tag">主食・代表作</span>
+              <span class="gourmet-shop"><i class="fa-solid fa-store"></i> 鼎泰豊 / 點水樓 ほか</span>
+            </div>
+            <div class="gourmet-body">
+              <h3 class="gourmet-name">小籠包 <span class="english-name">Xiaolongbao</span></h3>
+              <p class="gourmet-desc">薄さわずか数ミリの極薄皮に包まれた、旨味が凝縮された熱々の肉汁スープと厳選された豚肉の餡。レンゲに乗せて、針生姜と黒酢で一口で食べるのが王道のマナーです。</p>
+              <div class="gourmet-details">
+                <span class="detail-badge"><i class="fa-solid fa-fire"></i> 熱々スープ</span>
+                <span class="detail-badge"><i class="fa-solid fa-star"></i> 芸術的な18折</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gourmet 2: 牛肉麺 -->
+          <div class="gourmet-card">
+            <span class="gourmet-num">02</span>
+            <div class="gourmet-header">
+              <span class="gourmet-tag">主食・国民食</span>
+            </div>
+            <div class="gourmet-body">
+              <h3 class="gourmet-name">牛肉麺 <span class="english-name">Beef Noodle Soup</span></h3>
+              <p class="gourmet-desc">スパイスと牛骨の旨味が溶け込んだ醤油「紅焼」と、あっさり塩味の「清燉」の2スタイル。じっくり煮込まれてホロホロと崩れる厚切り牛肉と、職人が打つモチモチの極太麺が渾然一体となった、一度食べれば忘れられない逸品。</p>
+              <div class="gourmet-info-row">
+                <span class="gourmet-price">NT$420〜680</span>
+                <span class="gourmet-shop-inline"><i class="fa-solid fa-location-dot"></i> 林東芳牛肉麺 / 老張牛肉麺</span>
+              </div>
+              <div class="gourmet-details">
+                <span class="detail-badge"><i class="fa-solid fa-mortar-pestle"></i> 八角・漢方</span>
+                <span class="detail-badge"><i class="fa-solid fa-leaf"></i> 搾菜トッピング</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gourmet 3: 魯肉飯 -->
+          <div class="gourmet-card">
+            <span class="gourmet-num">03</span>
+            <div class="gourmet-header">
+              <span class="gourmet-tag">ローカル小吃</span>
+            </div>
+            <div class="gourmet-body">
+              <h3 class="gourmet-name">魯肉飯 <span class="english-name">Lu Rou Fan</span></h3>
+              <p class="gourmet-desc">細かく刻んだ豚バラ肉を八角入りの秘伝甘辛ダレでじっくり煮込み、熱々白米に惜しみなくかけるソウルフード。その奥深い旨味と芳醇な八角の香りは、長年職人が磨き続けた技の結晶。煮卵と大根の漬物を添えるのが定番スタイル。</p>
+              <div class="gourmet-info-row">
+                <span class="gourmet-price">NT$120〜180</span>
+                <span class="gourmet-shop-inline"><i class="fa-solid fa-location-dot"></i> 金峰魯肉飯 / 丸林魯肉飯</span>
+              </div>
+              <div class="gourmet-details">
+                <span class="detail-badge"><i class="fa-solid fa-bowl-rice"></i> 甘辛タレ</span>
+                <span class="detail-badge"><i class="fa-solid fa-egg"></i> 煮卵のせ必須</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gourmet 4: 台湾カステラ -->
+          <div class="gourmet-card">
+            <span class="gourmet-num">04</span>
+            <div class="gourmet-header">
+              <span class="gourmet-tag">甘味・台湾名物</span>
+            </div>
+            <div class="gourmet-body">
+              <h3 class="gourmet-name">台湾カステラ <span class="english-name">Taiwanese Castella</span></h3>
+              <p class="gourmet-desc">ブルンブルンと震えるほど柔らかいのに、口に入れた瞬間しゅわっと霧消するエア感が衝撃的。大量の新鮮卵と秘伝の配合で生まれる、日本のカステラとは異なる独自の進化系。オーブンから出てくる切り分けの瞬間は必見のショー。</p>
+              <div class="gourmet-info-row">
+                <span class="gourmet-price">NT$250〜380</span>
+                <span class="gourmet-shop-inline"><i class="fa-solid fa-location-dot"></i> 源味本舖 / 双連現烤蛋糕</span>
+              </div>
+              <div class="gourmet-details">
+                <span class="detail-badge"><i class="fa-solid fa-cloud"></i> ぷるしゅわ食感</span>
+                <span class="detail-badge"><i class="fa-solid fa-clock"></i> 焼き立て限定</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gourmet 5: マンゴーかき氷 -->
+          <div class="gourmet-card">
+            <span class="gourmet-num">05</span>
+            <div class="gourmet-header">
+              <span class="gourmet-tag">絶品スイーツ</span>
+            </div>
+            <div class="gourmet-body">
+              <h3 class="gourmet-name">マンゴーかき氷 <span class="english-name">Mango Shaved Ice</span></h3>
+              <p class="gourmet-desc">ミルク風味の氷を雪のようにふわふわに削る「雪花氷」に、台湾産愛文マンゴー（アップルマンゴー）を惜しみなく山盛りトッピング。練乳、マンゴーソルベ、フレッシュマンゴーという三位一体の構成で、南国の太陽が口の中に広がります。</p>
+              <div class="gourmet-info-row">
+                <span class="gourmet-price">NT$480〜750</span>
+                <span class="gourmet-shop-inline"><i class="fa-solid fa-location-dot"></i> 冰讃 / 思慕昔 (Smoothie House)</span>
+              </div>
+              <div class="gourmet-details">
+                <span class="detail-badge"><i class="fa-solid fa-sun"></i> 5〜9月が旬</span>
+                <span class="detail-badge"><i class="fa-solid fa-snowflake"></i> 雪花氷</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gourmet 6: 伝統台湾茶 -->
+          <div class="gourmet-card">
+            <span class="gourmet-num">06</span>
+            <div class="gourmet-header">
+              <span class="gourmet-tag">茶藝 / Tea Art</span>
+            </div>
+            <div class="gourmet-body">
+              <h3 class="gourmet-name">台湾茶藝 <span class="english-name">Taiwanese Tea Ceremony</span></h3>
+              <p class="gourmet-desc">「東方美人茶」の蜂蜜の余韻、「凍頂烏龍茶」の爽やかな甘み、「梨山高山茶」の気高い清涼感。台湾茶は一煎ごとに異なる表情を見せる生き物。九份や台北の老舗茶藝館で小さな茶杯を手に、時間を忘れて深みにはまる究極体験を。</p>
+              <div class="gourmet-info-row">
+                <span class="gourmet-price">NT$1,200〜3,500/席</span>
+                <span class="gourmet-shop-inline"><i class="fa-solid fa-location-dot"></i> 九份茶坊 / 紫藤廬</span>
+              </div>
+              <div class="gourmet-details">
+                <span class="detail-badge"><i class="fa-solid fa-spa"></i> 茶藝の作法</span>
+                <span class="detail-badge"><i class="fa-solid fa-mug-saucer"></i> 数煎楽しめる</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Itineraries & Budget Section -->
+    <section class="pricing-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="sub-title">Sample Itineraries</span>
+          <h2 class="section-title text-center">おすすめ旅行プラン＆料金目安</h2>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Card 1 -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3>台北週末エスケープ</h3>
+              <div class="price">¥128,000〜 <span class="period">/ 1名様</span></div>
+              <p>週末だけで行く、台北主要スポット欲張り凝縮プラン</p>
+            </div>
+            <ul class="pricing-features">
+              <li><i class="fa-solid fa-check"></i> 台北中心部4つ星ホテル2泊</li>
+              <li><i class="fa-solid fa-check"></i> 台北101展望台入場チケット付</li>
+              <li><i class="fa-solid fa-check"></i> 九份・十份（天燈上げ）半日バスツアー</li>
+              <li><i class="fa-solid fa-check"></i> 空港〜ホテル往復専用車送迎</li>
+            </ul>
+            <div class="pricing-action">
+              <a href="#consultation" class="btn btn-outline" data-plan="Taipei Pass">プランを相談する</a>
+            </div>
+          </div>
+
+          <!-- Card 2 (Recommended) -->
+          <div class="pricing-card recommended">
+            <div class="badge">王道ルート</div>
+            <div class="pricing-header">
+              <h3>台湾周遊縦断の旅</h3>
+              <div class="price">¥248,000〜 <span class="period">/ 1名様</span></div>
+              <p>新幹線で北から南へ！主要都市と名物グルメを網羅</p>
+            </div>
+            <ul class="pricing-features">
+              <li><i class="fa-solid fa-check"></i> 台北2泊・台南2泊（計4泊厳選ホテル）</li>
+              <li><i class="fa-solid fa-check"></i> 台湾高速鉄道（新幹線）周遊パス付</li>
+              <li><i class="fa-solid fa-check"></i> 専属日本語現地ガイド観光（台南半日）</li>
+              <li><i class="fa-solid fa-check"></i> 鼎泰豊（ディンタイフォン）ディナー付</li>
+            </ul>
+            <div class="pricing-action">
+              <a href="#consultation" class="btn btn-primary" data-plan="Taiwan Club">プランを相談する</a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3>悠久の大自然＆極上リゾート</h3>
+              <div class="price">¥580,000〜 <span class="period">/ 1名様</span></div>
+              <p>太魯閣峡谷と日月潭を贅沢に巡る大人のプレミアムバカンス</p>
+            </div>
+            <ul class="pricing-features">
+              <li><i class="fa-solid fa-check"></i> 絶景の5つ星ラグジュアリーリゾート5泊</li>
+              <li><i class="fa-solid fa-check"></i> 全行程プライベートチャーター車移動</li>
+              <li><i class="fa-solid fa-check"></i> 太魯閣プライベートトレッキングツアー</li>
+              <li><i class="fa-solid fa-check"></i> 美しい湖・日月潭プライベートクルーズ</li>
+            </ul>
+            <div class="pricing-action">
+              <a href="#consultation" class="btn btn-outline" data-plan="Taiwan Master">プランを相談する</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consultation Section -->
+    <section id="consultation" class="contact-section">
+      <div class="container grid-2">
+        <!-- Info Column -->
+        <div class="contact-info">
+          <h2 class="section-title">旅のご相談・窓口</h2>
+          <p class="contact-text">
+            お客様のご希望に合わせたオーダーメイドの旅程作成や、おすすめプランのカスタマイズ、航空券・ホテルの手配など、台湾旅行に関するご相談をお受けしています。お気軽にご連絡ください。
+          </p>
+          <div class="contact-details">
+            <div class="contact-detail-item">
+              <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+              <div>
+                <strong>Taipei Main Office</strong>
+                <p>台北市信義区信義路五段7号 台北101ビル 45F</p>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <span class="icon"><i class="fa-solid fa-clock"></i></span>
+              <div>
+                <strong>営業時間</strong>
+                <p>平日: 9:30 - 18:00 (日本時間) / 土日祝休</p>
+              </div>
+            </div>
+            <div class="contact-detail-item">
+              <span class="icon"><i class="fa-solid fa-phone"></i></span>
+              <div>
+                <strong>お電話・メール</strong>
+                <p>03-5678-1234 / support@discover-taiwan.co.jp</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div class="contact-form-container">
+          <form id="taiwan-consult-form" class="contact-form">
+            <div class="form-group">
+              <label for="form-name">お名前 <span class="required">*</span></label>
+              <input type="text" id="form-name" required placeholder="山田 太郎">
+            </div>
+            <div class="form-group">
+              <label for="form-email">メールアドレス <span class="required">*</span></label>
+              <input type="email" id="form-email" required placeholder="taro.yamada@example.com">
+            </div>
+            <div class="form-group">
+              <label for="form-plan">ご希望のプラン</label>
+              <select id="form-plan">
+                <option value="general">一般的な旅行相談・オーダーメイド</option>
+                <option value="taipei">台北週末エスケープ 3日間</option>
+                <option value="round">台湾周遊縦断の旅 5日間</option>
+                <option value="nature">悠久の大自然＆極上リゾート 6日間</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="form-message">ご要望・ご質問（渡航予定時期や人数など）</label>
+              <textarea id="form-message" rows="4" placeholder="（例）秋頃に家族3人で台湾一周を検討しています。台南でおすすめのホテルも教えてください。"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">送信する <i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+          <div id="form-success-msg" class="success-message-overlay" style="display: none;">
+            <div class="success-content">
+              <i class="fa-solid fa-circle-check success-icon"></i>
+              <h3>送信が完了しました！</h3>
+              <p>ご相談ありがとうございます。追って専任のコンシェルジュよりご連絡いたします。</p>
+              <button id="success-close-btn" class="btn btn-secondary btn-sm">閉じる</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ===== フッター（common.css で管理） ===== -->
   <footer class="site-footer">
     <p>&copy; 2026 チーム名</p>
   </footer>
+
+  <!-- Script for interactivity -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Region Filtering Logic
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const cards = document.querySelectorAll('.region-card');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Toggle active class on buttons
+          tabBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filterValue = btn.getAttribute('data-filter');
+
+          cards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            if (filterValue === 'all' || category === filterValue) {
+              card.classList.add('show');
+            } else {
+              card.classList.remove('show');
+            }
+          });
+        });
+      });
+
+      // Handle Plan Selection from pricing cards
+      const actionLinks = document.querySelectorAll('.pricing-card .btn');
+      const planSelect = document.getElementById('form-plan');
+
+      actionLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const plan = link.getAttribute('data-plan');
+          if (plan) {
+            if (plan === 'Taipei Pass') planSelect.value = 'taipei';
+            else if (plan === 'Taiwan Club') planSelect.value = 'round';
+            else if (plan === 'Taiwan Master') planSelect.value = 'nature';
+          }
+        });
+      });
+
+      // Consultation Form Submission Simulation
+      const form = document.getElementById('taiwan-consult-form');
+      const successOverlay = document.getElementById('form-success-msg');
+      const closeBtn = document.getElementById('success-close-btn');
+
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          successOverlay.style.display = 'flex';
+          form.reset();
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          successOverlay.style.display = 'none';
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
